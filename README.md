@@ -1,71 +1,120 @@
-# Team Collaboration Platform
+const fs = require("fs");
+const path = require("path");
 
-A web-based platform that allows teams to manage projects, assign tasks, track progress, and communicate in real-time. Includes role-based access control, Kanban task boards, and team chat functionality.
+const readmeContent = `
+# 🚀 Team Collaboration Platform
+
+![GitHub Repo Size](https://img.shields.io/github/repo-size/<username>/<repo>) 
+![GitHub last commit](https://img.shields.io/github/last-commit/<username>/<repo>) 
+![License](https://img.shields.io/github/license/<username>/<repo>)
+
+A **web-based platform** that enables teams to **manage projects**, **assign tasks**, **track progress**, and **communicate in real-time**.  
+
+**Key Features:**
+- Role-based access control (Admin, Manager, Member)
+- Kanban-style task boards with drag-and-drop
+- Real-time chat with Socket.IO
+- Team activity logs
+- Responsive and modern UI with Tailwind CSS & Shadcn components
 
 ---
 
-## Setup and Run Instructions
+## 🛠 Setup and Run Instructions
 
 ### Backend
-
-1) Clone the repository.
-2) Navigate to the backend folder: cd Backend
-3) Install dependencies: npm install
-   
-4) Create a .env file with the following variables:
+1. **Clone the repository**
+\`\`\`bash
+git clone <repository_url>
+\`\`\`
+2. **Navigate to backend folder**
+\`\`\`bash
+cd Backend
+\`\`\`
+3. **Install dependencies**
+\`\`\`bash
+npm install
+\`\`\`
+4. **Create a \`.env\` file** with the following variables:
+\`\`\`env
 PORT=5000
 MONGO_URI=<your_mongodb_uri>
 FIREBASE_SERVICE_ACCOUNT=<path_to_serviceAccountKey.json>
 JWT_SECRET=<your_jwt_secret>
-
-5)Start the backend server:   npm run dev
-
-
+\`\`\`
+5. **Start the backend server**
+\`\`\`bash
+npm run dev
+\`\`\`
 
 ### Frontend
+1. **Navigate to frontend folder**
+\`\`\`bash
+cd Frontend
+\`\`\`
+2. **Install dependencies**
+\`\`\`bash
+npm install
+\`\`\`
+3. **Configure Firebase** in \`firebase.ts\` with your project credentials
+4. **Start the frontend server**
+\`\`\`bash
+npm run dev
+\`\`\`
+5. **Open in browser**
+\`\`\`
+http://localhost:5173
+\`\`\`
 
-1) Navigate to the frontend folder: cd Frontend
-2) Install dependencies: npm install
-3) Configure Firebase in firebase.ts with your project credentials
-4) Start the frontend server:   npm run dev
-5) Open the app in the browser at: http://localhost:5173
+---
 
+## 🧰 Technology Stack
 
-🧰 Technology Stack
+### Frontend
+- ⚛️ React.js
+- 🟦 TypeScript
+- 🎨 Tailwind CSS
+- 🖼️ Shadcn UI
+- 🧭 React Router
+- 📦 React Beautiful DnD
+- 🔒 Firebase Authentication
+- 💬 Socket.IO-client
 
-# Frontend
+### Backend
+- 🌐 Node.js
+- 🚂 Express.js
+- 🗄️ MongoDB with Mongoose
+- 🔑 Firebase Admin SDK
+- 📝 Joi (Validation)
+- 🔐 JSON Web Tokens (JWT)
+- 💬 Socket.IO
 
-1) React.js
-2) TypeScript
-3) Tailwind CSS
-4) Shadcn UI
-5) React Router
-6) React Beautiful DnD
-7) Firebase Authentication
-8) Socket.IO-client
+---
 
+## ✨ Additional Features
+- **Role-based access** for Admin, Manager, and Member
+- **Real-time chat** for teams
+- **Kanban task board** with drag-and-drop functionality
+- **User activity logs** for tracking tasks and messages
+- **Dark mode support** using Tailwind CSS
+- **Input validation** with Joi and secure authentication via Firebase & JWT
+- **Responsive UI** built with Shadcn components
 
+---
 
-# Backend
+## 📹 Demonstration
+Check out the video demo to see the app in action:
+- Login & Registration
+- Project & Task Management
+- Drag-and-Drop Kanban board
+- Real-time chat
+- Role-based views (Admin vs Manager vs Member)
 
-1)Node.js
-2) Express.js
-3) MongoDB with Mongoose
-4) Firebase Admin SDK
-5) Joi (Validation)
-6) JSON Web Tokens (JWT)
-7) Socket.IO
+---
 
+Generated with ❤️ by **[Shashank Singh]**
+`;
 
+const filePath = path.join(__dirname, "README.md");
+fs.writeFileSync(filePath, readmeContent.trim(), "utf8");
 
-
-
-✨ Additional Features Implemented
-
-1) Role-based access (Admin, Manager, Member) across frontend and backend.
-2) Real-time chat using Socket.IO.
-3) Kanban task board with drag-and-drop support.
-4) Activity logs for tracking user actions.
-5) Dark mode support with Tailwind CSS.
-6) Input validation with Joi and secure authentication with Firebase & JWT.
-7) Responsive and clean UI using Shadcn components.
+console.log("✅ README.md has been successfully generated!");
