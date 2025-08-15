@@ -108,10 +108,5 @@ Check out the video demo to see the app in action:
 ---
 
 Generated with ❤️ by **[Shashank Singh]**
-`;
 
-const filePath = path.join(__dirname, "README.md");
-fs.writeFileSync(filePath, readmeContent.trim(), "utf8");
-
-console.log("✅ README.md has been successfully generated!");
 
