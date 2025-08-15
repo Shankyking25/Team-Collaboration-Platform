@@ -1,7 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
-const readmeContent = `
 # 🚀 Team Collaboration Platform
 
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/<username>/<repo>) 
@@ -118,3 +114,4 @@ const filePath = path.join(__dirname, "README.md");
 fs.writeFileSync(filePath, readmeContent.trim(), "utf8");
 
 console.log("✅ README.md has been successfully generated!");
+
